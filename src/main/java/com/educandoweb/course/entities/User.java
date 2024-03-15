@@ -7,7 +7,6 @@ import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,7 +30,7 @@ public class User implements Serializable {
 	
 	
 	@JsonIgnore
-	@OneToMany(mappedBy="client",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="client")
 	private List<Order> orders = new ArrayList<>();
 
 	@Override
